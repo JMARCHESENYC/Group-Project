@@ -106,6 +106,7 @@ Git flow:
 		- Team pulls @ beginning of day
 			- from master
 				- git pull origin master
+				- npm install (the first time)
 
 ---
 User story:
