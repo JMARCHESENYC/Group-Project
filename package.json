@@ -1,0 +1,28 @@
+{
+  "name": "group-project",
+  "version": "1.0.0",
+  "description": "PROJECT 3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMARCHESENYC/Group-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMARCHESENYC/Group-Project/issues"
+  },
+  "homepage": "https://github.com/JMARCHESENYC/Group-Project#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "md5": "^2.0.0",
+    "mongoose": "^4.2.7",
+    "morgan": "^1.6.1"
+  }
+}
