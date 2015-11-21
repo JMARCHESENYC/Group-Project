@@ -9,6 +9,7 @@ GROUP# Team Drogon
 	- Jeff
 	- Justin
 	- David
+
 ---
 
 Links:
@@ -56,32 +57,35 @@ Necessary Deliverables:
 Team organization-
 
 Roles:
-	- Justin
-		- Git Czar
-	- Jeff
-		- Mockups Czar
-	- David
-		- Trello Czar
+
+- Justin
+	- Git Czar
+- Jeff
+	- Mockups Czar
+- David
+	- Trello Czar
 
 Timeline goals:
-	- Friday 11/16
-		- git flow --x--
-		- User story --o--
-		- trello --o--
-		- skeleton
-	- Tuesday 11/20
-		- Mini MVP
-			- (functioning app with at least 1 route)
-	- Saturday
-		- +features complete
-	- Monday 11/26
-		- Full app done
+
+- Friday 11/16
+	- git flow --x--
+	- User story --o--
+	- trello --o--
+	- skeleton
+- Tuesday 11/20
+	- Mini MVP
+		- (functioning app with at least 1 route)
+- Saturday
+	- +features complete
+- Monday 11/26
+	- Full app done
 
 Sync schedule:
-	- Sunday 11/22
-	- Wednesday 11/25
-	- Friday 11/27
-	- Saturday 11/25
+
+- Sunday 11/22
+- Wednesday 11/25
+- Friday 11/27
+- Saturday 11/25
 
 Trello link: https://trello.com/b/t0tm1Sd3
 
@@ -139,7 +143,7 @@ MVP:
 	- user updates button
 		displays form 
 		- edit
-		- 
+		- delete
 	- logout
 
 
