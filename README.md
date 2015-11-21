@@ -1,6 +1,8 @@
 PROJECT 3
 
+
 GROUP# Team Drogon
+
 
 Members:
 Jeff
@@ -8,15 +10,18 @@ Justin
 David
 Links:
 
+
 Instructions:
 
 https://github.com/madhat5/wdi_lettuce_students/blob/master/projects/project3/project3_prompt.md
 Project:
 
+
 GitHub
 https://github.com/JMARCHESENYC/Group-Project
 Heroku
 Technical Requirements:
+
 
 Your app must:
 
@@ -43,6 +48,7 @@ Link to your user stories – who are your users, what do they want, and why?
 Link to your wireframes – sketches of major views / interfaces in your application
 Descriptions of any unsolved problems or major hurdles your team had to overcome
 Team organization-
+
 
 Roles:
 
@@ -78,6 +84,7 @@ Wireframes: https://moqups.com/jeffkral/KvwcN460/p:a16b2c2a4
 
 Slack Channel: Yes
 
+
 Git flow:
 
 Justin is Czar
@@ -98,6 +105,7 @@ from master
 git pull origin master
 npm install (the first time)
 User story:
+
 
 MVP:
 
@@ -129,6 +137,7 @@ edit
 delete
 logout
 +features:
+
 
 App Build Steps:
 
