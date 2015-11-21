@@ -90,23 +90,24 @@ Wireframes: https://moqups.com/jeffkral/KvwcN460/p:a16b2c2a4
 Slack Channel: Yes
 
 Git flow:
-	- Justin is Czar
-	- Steps:
-		- git clone git@github.com:JMARCHESENYC/Group-Project.git
-		- Justin merges end of day
-		- Team creates 1 branch per file task
-			- from master
-				- git checkout -b name_feature
-		- Team pushes by end of day 
-			- from branch
-				- git add .
-				- git commit -m "update details"
-				- git push origin name_feature
-			- slack note when pushed
-		- Team pulls @ beginning of day
-			- from master
-				- git pull origin master
-				- npm install (the first time)
+
+- Justin is Czar
+- Steps:
+	- git clone git@github.com:JMARCHESENYC/Group-Project.git
+	- Justin merges end of day
+	- Team creates 1 branch per file task
+		- from master
+			- git checkout -b name_feature
+	- Team pushes by end of day 
+		- from branch
+			- git add .
+			- git commit -m "update details"
+			- git push origin name_feature
+		- slack note when pushed
+	- Team pulls @ beginning of day
+		- from master
+			- git pull origin master
+			- npm install (the first time)
 
 ---
 User story:
