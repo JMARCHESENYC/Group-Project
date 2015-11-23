@@ -9,7 +9,7 @@ $(function(){
 
   $("#signup-button").click(function(){
     // TEST
-    console.log("Signup for loading...");
+    console.log("Signup form loading...");
 
     renderNewUserForm();
   });
@@ -18,9 +18,10 @@ $(function(){
     console.log("Logging in...");
   });
 
-  $("#signup-register").click(function(){
-    console.log("Account registering...");
-  });
+  // $("#signup-register").click(function(){
+  //   console.log("Account registering...");
+  //   createUser();
+  // });
 
   // RENDERING/////////////////////////////////////////////////////////
 
@@ -82,6 +83,7 @@ $(function(){
     console.log('New user created...');
 
     var resultDiv = $("#form-container");
+    var username = $('#signup-username').val();
 
     var userData = {
       username: username
