@@ -18,10 +18,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
 
-    <style> 
+    <style>
     @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
-    @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700"); 
-    
+    @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+
     </style>
 
 </head>
@@ -35,7 +35,7 @@
 
   <div id="title">Sports Bucket List</div>
   <div id="map-canvas"></div>
-  
+
 
   <!-- SIGNUP BUTTON -->
   <button class="btn btn-primary"  id="signup-button">Signup Now</button>
@@ -54,6 +54,22 @@
       <br>
       <button class="btn btn-primary" type="signup-register">Register</button>
     </div>
+  </template>
+
+  <!-- QUERY RESULTS -->
+  <div id="results-container">
+    <div id="results-show"></div>
+  </div>
+
+
+  <div id="form-container"></div>
+
+  <!-- USER DISPLAY -->
+  <template id="user-view-template">
+    <div id="user-container" data-id="{{_id}}">
+      <h4>Username: {{username}}</h4>
+    </div>
+    <button type="text" id='user-edit-link' data-id='{{_id}}'>Edit My Info</button>
   </template>
 
 
