@@ -1,0 +1,13 @@
+#map-canvas{
+    margin: 0 auto;
+    height: 400px; width: 1000px;
+    background-color: papayawhip;
+}
+
+ #title {
+
+	text-align: center;
+	font-size: 50px;
+	font-family: helvetica;
+
+}

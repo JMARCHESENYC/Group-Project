@@ -11,7 +11,7 @@ var express      = require('express'),
 var port         = process.env.PORT || 3000;
 var app          = express();
 
-var buket_items = require('./bucket_list.js');
+var bucket_items = require('./bucket_list.js');
 
 // MIDDLEWARE
 app.use(morgan('dev'));

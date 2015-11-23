@@ -3,6 +3,7 @@ console.log('Page loaded...')
 
 user = null;
 
+// WINDOW ONLOAD
 $(function(){
 
   // CLICK EVENTS///////////////////////////////////////////////////////
@@ -98,10 +99,23 @@ $(function(){
 
 });
 
+  var initialize = function() {
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+      zoom: 2,
+      maxZoom: 2,
+      minZoom: 2,
+      streetViewControl: false,
+      draggable: false,
+      // mapTypeControl: false,
+      center: new google.maps.LatLng(31.639215, -7.982481),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+  };
+  initialize();
+
+}); // END OF WINDOW ONLOAD
+
 
 // TEMP STUFF && GARBAGE//////////////////////////////////////////////////
-
-
-
-
 
