@@ -39,3 +39,18 @@
   <script src="app.js"></script>
 </body>
 </html>
+
+<!-- TEMP -->
+
+  <div id="results-container">
+    <div id="results-show"></div>
+  </div>
+
+  <!-- USER DISPLAY -->
+  <template id='user-view-template'>
+    <div id='user-container' data-id='{{_id}}'>
+      <h3>Username: {{username}}</h3>
+    </div>
+    <h4>There are {{tasks.length}} growth opportunities!</h4>
+    <button type="text" id='user-edit-link' data-id='{{_id}}'>Edit Me</button>
+  </template>
