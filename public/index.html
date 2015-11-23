@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
+<meta charset="utf-8" />
 <head>
   <title>Team Drogon</title>
 
+
   	<link rel="stylesheet" type="text/css" href="style.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
+
+    <style> 
+    @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+    @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700"); 
+    
+    </style>
 
 </head>
 
@@ -24,21 +38,21 @@
   
 
   <!-- SIGNUP BUTTON -->
-  <button id="signup-button">Signup Now</button>
-  <button id="login-button">Login</button>
+  <button class="btn btn-primary"  id="signup-button">Signup Now</button>
+  <button class="btn btn-primary"  id="login-button">Login</button>
   <br>
   <br>
 
   <!-- NEW USER SIGNUP FORM -->
   <template id='signup-template'>
     <div id='signup-form'>
-      <input type="text" id="signup-username" placeholder="Username">
+      <i class="fa fa-user"></i><input  type="text" id="signup-username"  placeholder="Username">
       <br>
       <br>
-      <input type="text" id="signup-passworkd" placeholder="Password">
+      <i class="fa fa-lock"></i><input class="fa fa-lock" type="text" id="signup-passworkd"  placeholder="Password">
       <br>
       <br>
-      <button type="signup-register">Register</button>
+      <button class="btn btn-primary" type="signup-register">Register</button>
     </div>
   </template>
 
@@ -47,3 +61,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+
