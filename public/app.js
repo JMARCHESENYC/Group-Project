@@ -3,6 +3,7 @@ console.log('Page loaded...')
 
 user = null;
 
+
 $(function(){
 
   // CLICK EVENTS///////////////////////////////////////////////////////////
@@ -40,9 +41,31 @@ $(function(){
   };
 
 
+var initialize = function() {
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom: 2,
+    maxZoom: 2,
+    minZoom: 2,
+    streetViewControl: false,
+    draggable: false,
+    // mapTypeControl: false,
+    center: new google.maps.LatLng(31.639215, -7.982481),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+
+};
+
+initialize();
+ // google.maps.event.addDomListener(window, 'load', initialize);
+
+
 
 });
 
-// TEMP STUFF && GARBAGE//////////////////////////////////////////////////
+// google.maps.event.addDomListener(window, 'load', initMap);
 
+// TEMP STUFF && GARBAGE//////////////////////////////////////////////////
+// 
 
