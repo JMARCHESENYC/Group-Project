@@ -33,16 +33,35 @@ $(function(){
     }).done(renderUsers);
   };
 
-  // renderUser
+  var renderUsers = function(data){
+    var resultDiv = $("#results-show");
+    resultDiv.empty();
+
+    $("#signup-button").hide();
+    $("#login-button").hide();
+    $("#signup-form").hide();
+
+    var source = $("#user-view-template").html();
+    var template = Handlebars.compile(source);
+
+    for (var x = 0; x < data.length; x++){
+      resultDiv.append(template(data[x]));
+    };
+  };
 
   var renderNewUserForm = function(data){
     console.log('Register form loaded...')
+
+    var resultDiv = $("#form-container");
+
+    $("#results-show").empty();
+    resultDiv.empty();
+    resultDiv.show();
 
     $("#signup-button").hide();
     $("#login-button").hide();
 
     var source = $("#signup-template").html();
-
     var template = Handlebars.compile(source);
     var signupHTML = template();
 
@@ -62,6 +81,8 @@ $(function(){
   var createUser = function(){
     console.log('New user created...');
 
+    var resultDiv = $("#form-container");
+
     var userData = {
       username: username
     };
@@ -70,40 +91,14 @@ $(function(){
       method: "POST",
       data: userData
     }).done(getUsers);
+    resultDiv.empty();
   };
 
 });
 
-  var renderUsers = function(){
-
-  };
 
 // TEMP STUFF && GARBAGE//////////////////////////////////////////////////
 
-var renderInstructors = function(data) {
-  // console.log("ajax has completed bc I'm rendering instructors");
-
-  // Gotta make sure the right thing is showing and the wrong things aren't
-  // Try commenting this stuff out and watch what happens...yuck
-  var resultDiv = $('#horizontal');
-  resultDiv.empty();
-  $('#new-instructor-link').show();
-  $('#new-complaint-link').hide();
-  $('#form-container').empty();
-
-  // Let's set up Handlebars and compile so all this templating isn't happening server side, but client!
-  var template = Handlebars.compile($('#instructor-template').html());
-  for(var i=0;i<data.length;i++) {
-    resultDiv.append(template(data[i]))
-    $('.edit-instructor').click(function() {
-      console.log("edit worked");
-      var id = $('.edit-instructor').attr("data-id")
-      console.log(id);
-      editInstructor();
-    });
-  };
-
-};
 
 
 
