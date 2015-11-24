@@ -29,3 +29,9 @@ body{
 #register{
 	font-family: 'Play', sans-serif;
 }
+
+#user-view-template{
+	font-family: 'Play', sans-serif;
+	text-align: center;
+
+}
