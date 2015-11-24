@@ -6,6 +6,8 @@ user = null;
 // WINDOW ONLOAD
 $(function(){
 
+  
+
   // CLICK EVENTS///////////////////////////////////////////////////////
 
   $("#signup-button").click(function(){
@@ -17,6 +19,11 @@ $(function(){
 
   $("#login-button").click(function(){
     console.log("Logging in...");
+
+    $.get('/bucket_list', function(data) {
+
+      console.log(data);
+    })
   });
 
   // $("#signup-register").click(function(){
@@ -97,7 +104,6 @@ $(function(){
     resultDiv.empty();
   };
 
-});
 
   var initialize = function() {
 
@@ -111,8 +117,19 @@ $(function(){
       center: new google.maps.LatLng(31.639215, -7.982481),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+
+    // for (var i = 0; i < bucket_list.length; i++) {
+       
+       // var marker = new google.maps.Marker ({
+
+       //  position: bucket_list[0].location,
+       //  map: map
+       // })
+    
   };
   initialize();
+
+    
 
 }); // END OF WINDOW ONLOAD
 
