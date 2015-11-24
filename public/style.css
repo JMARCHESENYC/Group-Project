@@ -1,3 +1,7 @@
+body{
+	font-family: 'Play', sans-serif;
+}
+
 #map-canvas{
     margin: 0 auto;
     height: 400px; width: 1000px;
@@ -7,7 +11,21 @@
  #title {
 
 	text-align: center;
-	font-size: 50px;
-	font-family: helvetica;
+	font-size: 75px;
+	font-family: 'Play', sans-serif;
 
+}
+
+#signup-button{
+	font-family: 'Play', sans-serif;
+	text-align: center;
+}
+
+#login-button{
+	font-family: 'Play', sans-serif;
+	text-align: center;
+}
+
+#register{
+	font-family: 'Play', sans-serif;
 }
