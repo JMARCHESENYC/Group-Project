@@ -20,10 +20,7 @@ $(function(){
   $("#login-button").click(function(){
     console.log("Logging in...");
 
-    $.get('/bucket_list', function(data) {
-
-      console.log(data);
-    })
+    
   });
 
   // $("#signup-register").click(function(){
@@ -112,25 +109,45 @@ $(function(){
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
       zoom: 2,
-      maxZoom: 2,
+      maxZoom: 8,
       minZoom: 2,
       streetViewControl: false,
-      draggable: false,
+      draggable: true,
       // mapTypeControl: false,
       center: new google.maps.LatLng(31.639215, -7.982481),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    // for (var i = 0; i < bucket_list.length; i++) {
-       
-       // var marker = new google.maps.Marker ({
 
-       //  position: bucket_list[0].location,
-       //  map: map
-       // })
+       $.get('/bucket_list', function(data) {
+
+
+      for (var i = 0; i < data.length; i++) {
+
+     
+       
+       var marker = new google.maps.Marker ({
+        
+
+        position: data[i].location,
+        map: map,
+        animation: google.maps.Animation.DROP
+       })
+
+  }
     
-  };
+  
+});
+}
   initialize();
+
+//   function drop() {
+//   for (var i =0; i < markerArray.length; i++) {
+//     setTimeout(function() {
+//       addMarkerMethod();
+//     }, i * 200);
+//   }
+// }
 
     
 
