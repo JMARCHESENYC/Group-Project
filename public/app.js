@@ -19,6 +19,11 @@ $(function(){
 
   });
 
+  $('#mylist-add').click(function(){
+    // console.log('add worked...')
+    displayEvent();
+  });
+
   // DON'T NEED
   // $("#signup-register").click(function(){
   //   console.log("Account registering...");
@@ -125,9 +130,25 @@ $(function(){
   };
   initialize();
 
-  var getBucketEvent = function(){
+  // MIGHT NOT NEED THIS
+  // var attachNewBucketEvent = function(){
+  // };
 
-  }
+  var displayEvent = function(){
+    // console.log('word')
+    var test = "Hello";
+
+    var resultDiv = $("#bucket-list-todo");
+    resultDiv.empty();
+
+    // var source = $("#bucket-list-todo").html();
+    // var template = Handlebars.compile(source);
+
+    $.get('/bucket_list', function(data) {
+      resultDiv.append(test);
+      // resultDiv.append(template(data[0]));
+    });
+  };
 
 }); // END OF WINDOW ONLOAD
 
