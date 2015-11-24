@@ -6,7 +6,7 @@ user = null;
 // WINDOW ONLOAD
 $(function(){
 
-  
+
 
   // CLICK EVENTS///////////////////////////////////////////////////////
 
@@ -60,7 +60,7 @@ $(function(){
 
   var attachNewUserEvent = function(){
     $('#register').click(function(){
-      
+
       console.log("User registered...");
 
       createUser();
@@ -122,17 +122,19 @@ $(function(){
     });
 
     // for (var i = 0; i < bucket_list.length; i++) {
-       
+
        // var marker = new google.maps.Marker ({
 
        //  position: bucket_list[0].location,
        //  map: map
        // })
-    
+
   };
   initialize();
 
-    
+  var getBucketEvent = function(){
+
+  }
 
 }); // END OF WINDOW ONLOAD
 
