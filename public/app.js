@@ -100,7 +100,7 @@ $(function(){
   };
 
   // MAP SETUP
-  var initialize = function() {
+  var initialize = function(data) {
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
       zoom: 2,
@@ -113,17 +113,15 @@ $(function(){
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    for (var i = 0; i < bucket_list.length; i++) {
-       $.get('/bucket_list', function(data) {
-        for (var i = 0; i < data.length; i++) {
-          var marker = new google.maps.Marker ({
-            position: data[i].location,
-            map: map,
-            animation: google.maps.Animation.DROP
-          });
-        };
-      });
-    };
+    $.get('/bucket_list', function(data) {
+      for (var i = 0; i < data.length; i++) {
+        var marker = new google.maps.Marker ({
+          position: data[i].location,
+          map: map,
+          animation: google.maps.Animation.DROP
+        });
+      };
+    });
   };
   initialize();
 
