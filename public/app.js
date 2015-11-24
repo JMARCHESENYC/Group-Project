@@ -5,9 +5,6 @@ user = null;
 
 // WINDOW ONLOAD
 $(function(){
-
-  
-
   // CLICK EVENTS///////////////////////////////////////////////////////
 
   $("#signup-button").click(function(){
@@ -20,9 +17,9 @@ $(function(){
   $("#login-button").click(function(){
     console.log("Logging in...");
 
-    
   });
 
+  // DON'T NEED
   // $("#signup-register").click(function(){
   //   console.log("Account registering...");
   //   createUser();
@@ -57,7 +54,7 @@ $(function(){
 
   var attachNewUserEvent = function(){
     $('#register').click(function(){
-      
+
       console.log("User registered...");
 
       createUser();
@@ -85,8 +82,6 @@ $(function(){
     attachNewUserEvent();
   };
 
-
-
   var createUser = function(){
     console.log('New user created...');
 
@@ -104,8 +99,8 @@ $(function(){
     resultDiv.empty();
   };
 
-
-  var initialize = function() {
+  // MAP SETUP
+  var initialize = function(data) {
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
       zoom: 2,
@@ -118,38 +113,21 @@ $(function(){
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-
-       $.get('/bucket_list', function(data) {
-
-
+    $.get('/bucket_list', function(data) {
       for (var i = 0; i < data.length; i++) {
-
-     
-       
-       var marker = new google.maps.Marker ({
-        
-
-        position: data[i].location,
-        map: map,
-        animation: google.maps.Animation.DROP
-       })
-
-  }
-    
-  
-});
-}
+        var marker = new google.maps.Marker ({
+          position: data[i].location,
+          map: map,
+          animation: google.maps.Animation.DROP
+        });
+      };
+    });
+  };
   initialize();
 
-//   function drop() {
-//   for (var i =0; i < markerArray.length; i++) {
-//     setTimeout(function() {
-//       addMarkerMethod();
-//     }, i * 200);
-//   }
-// }
+  var getBucketEvent = function(){
 
-    
+  }
 
 }); // END OF WINDOW ONLOAD
 
