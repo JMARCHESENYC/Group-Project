@@ -58,6 +58,15 @@ $(function(){
     };
   };
 
+  var attachNewUserEvent = function(){
+    $('#register').click(function(){
+      
+      console.log("User registered...");
+
+      createUser();
+    });
+  };
+
   var renderNewUserForm = function(data){
     console.log('Register form loaded...')
 
@@ -79,13 +88,7 @@ $(function(){
     attachNewUserEvent();
   };
 
-  var attachNewUserEvent = function(){
-    $("#signup-register").click(function(){
-      console.log("User registered...");
 
-      createUser();
-    });
-  };
 
   var createUser = function(){
     console.log('New user created...');
