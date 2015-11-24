@@ -44,7 +44,7 @@ module.exports = [
   {
     title: "Dakar Rally",
     info: "It is an annual rally raid organised by the Amaury Sport Organisation. Most events since the inception in 1978 were from Paris, France, to Dakar, Senegal, but due to security threats in Mauritania, which led to the cancellation of the 2008 rally, the 2009 Dakar Rally was run in South America (Argentina and Chile); it has been held in South America each year since. The race is open to amateur and professional entries, amateurs typically making up about eighty percent of the participants.",
-    location: {lat: 34.618569, lng: -58.412730},
+    location: {lat: -34.618569, lng: -58.412730},
     link: "https://en.wikipedia.org/wiki/Dakar_Rally",
     completed: false
   },
@@ -100,7 +100,7 @@ module.exports = [
   {
     title: "Australian Open",
     info: "The Australian Open is a major tennis tournament held annually over the last fortnight of January in Melbourne, Australia. First held in 1905, the tournament is chronologically the first of the four Grand Slam tennis events of the year – the other three being the French Open, Wimbledon, and the US Open.",
-    location: {lat: 37.821225, lng: 144.978547},
+    location: {lat: -37.821225, lng: 144.978547},
     link: "https://en.wikipedia.org/wiki/Australian_Open",
     completed: false
   },
@@ -128,7 +128,7 @@ module.exports = [
   {
     title: "Summer Olympics",
     info: "The Summer Olympic Games or the Games of the Olympiad, first held in 1896, are an international multi-sport event, occurring every four years, organized by the International Olympic Committee. Medals are awarded in each event, with gold medals for first place, silver for second and bronze for third, a tradition that started in 1904.",
-    location: {lat: 22.999269, lng: -43.365377},
+    location: {lat: -22.999269, lng: -43.365377},
     link: "https://en.wikipedia.org/wiki/Summer_Olympic_Games",
     completed: false
   },
@@ -163,7 +163,7 @@ module.exports = [
   {
     title: "AFL Grand Final",
     info: "The AFL Grand Final is an annual Australian rules football match, traditionally held on the final Saturday in September or the first Saturday in October at the Melbourne Cricket Ground in Melbourne, Australia to determine the Australian Football League (AFL) premiership champions for that year.",
-    location: {lat: 37.819965, lng: 144.983444},
+    location: {lat: -37.819965, lng: 144.983444},
     link: "https://en.wikipedia.org/wiki/AFL_Grand_Final",
     completed: false
   },
@@ -198,7 +198,7 @@ module.exports = [
   {
     title: "Superclásico",
     info: "Superclásico is the name used to describe the football match in Argentina between Buenos Aires rivals Boca Juniors and River Plate. It derives from the Spanish usage of 'clásico' to mean derby, with the prefix 'super' used as the two clubs are the most popular and successful clubs in Argentine football. The Superclásico is known worldwide as one of the fiercest and most important derbies.In April 2004, the English newspaper The Observer put the Superclásico at the top of their list of '50 sporting things you must do before you die'",
-    location: {lat: 34.635609, lng: -58.364760},
+    location: {lat: -34.635609, lng: -58.364760},
     link: "https://en.wikipedia.org/wiki/Supercl%C3%A1sico",
     completed: false
   },
