@@ -19,15 +19,25 @@ body{
 #signup-button{
 	font-family: 'Play', sans-serif;
 	text-align: center;
+	position: absolute;
+    left: 620px;
+    top: 625px;
 }
 
 #login-button{
 	font-family: 'Play', sans-serif;
 	text-align: center;
+	position: absolute;
+    left: 740px;
+    top: 625px;
 }
+
 
 #register{
 	font-family: 'Play', sans-serif;
+	position: absolute;
+    left: 660px;
+    top: 720px;
 }
 
 #user-view-template{
@@ -35,3 +45,66 @@ body{
 	text-align: center;
 
 }
+
+
+
+#signup-username{
+	font-family: 'Play', sans-serif;
+	text-align: center;
+	position: absolute;
+    left: 620px;
+    top: 625px;
+}
+
+#signup-password{
+	font-family: 'Play', sans-serif;
+	text-align: center;
+	position: absolute;
+    left: 620px;
+    top: 675px;
+}
+
+#mylist-add{
+	font-family: 'Play', sans-serif;
+}
+
+#mylist-complete{
+	font-family: 'Play', sans-serif;
+}
+
+#bucket-list-todo{
+	position: absolute;
+	left: 120px;
+    background-color: lightgrey;
+    width: 500px;
+    padding: 25px;
+    border: 10px solid navy;
+    margin: 25px;
+}
+
+#bucket-list-completed{
+	position: absolute;
+	left: 720px;
+	background-color: lightgrey;
+    width: 500px;
+    padding: 25px;
+    border: 10px solid navy;
+    margin: 25px;
+}
+
+#justin{
+	position: absolute;
+    left: 610px;
+    top: 625px;
+
+}
+
+#jets{
+	position: absolute;
+    left: 610px;
+    top: 675px;
+
+}
+
+
+
