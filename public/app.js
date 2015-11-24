@@ -1,12 +1,14 @@
 // TEST
 console.log('Page loaded...')
 
+
 user = null;
 
 // WINDOW ONLOAD
 $(function(){
   // CLICK EVENTS///////////////////////////////////////////////////////
 
+"use strict";
   $("#signup-button").click(function(){
     // TEST
     console.log("Signup form loading...");
@@ -115,14 +117,25 @@ $(function(){
 
     $.get('/bucket_list', function(data) {
       for (var i = 0; i < data.length; i++) {
+        // console.log(data[i])
         var marker = new google.maps.Marker ({
           position: data[i].location,
           map: map,
           animation: google.maps.Animation.DROP
         });
+
+        var test_data = data[i];
+        
+        marker.addListener('click', function(data) {
+          // $('#myModal').modal('show');
+          console.log("modals");
+          // console.log(data[0])
+          console.log(test_data);
+          console.log(typeof test_data);
+        });
       };
     });
-  };
+  }; //End of initialize
   initialize();
 
   var getBucketEvent = function(){
@@ -133,4 +146,8 @@ $(function(){
 
 
 // TEMP STUFF && GARBAGE//////////////////////////////////////////////////
-
+ // $("marker").attr("class","marker");
+        
+        // $(this).click(function() {
+        //   console.log("works");
+        // });
