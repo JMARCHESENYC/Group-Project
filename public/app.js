@@ -109,39 +109,56 @@ $(function(){
   // MAP SETUP
   var initialize = function(data) {
 
+    var infowindow = new google.maps.InfoWindow();
+    
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
       zoom: 2,
-      maxZoom: 8,
+      // maxZoom: 12,
       minZoom: 2,
       streetViewControl: false,
       draggable: true,
+      tilt: 45,
       // mapTypeControl: false,
       center: new google.maps.LatLng(31.639215, -7.982481),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
     $.get('/bucket_list', function(data) {
+
+     
+      // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
-        // console.log(data[i])
+
+        var eventInfo = data[i].info + "<a href='http://google.com' class='button'>Add to Bucket List</a>"
         var marker = new google.maps.Marker ({
           position: data[i].location,
           map: map,
-          animation: google.maps.Animation.DROP
+          animation: google.maps.Animation.DROP,
+          title: data[i].title
         });
 
-        var test_data = data[i];
-        
-        marker.addListener('click', function(data) {
-          // $('#myModal').modal('show');
-          console.log("modals");
-          // console.log(data[0])
-          console.log(test_data);
-          console.log(typeof test_data);
+        // recursive function call
+        attachEventInfo(marker, eventInfo);
+
+        // function to attach event info to markers
+        function attachEventInfo(marker, eventInfo) {
+          var infowindow = new google.maps.InfoWindow({
+            content: eventInfo
+          });
+
+        // attache click event to markers
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
         });
-      };
-    });
+        }
+
+
+      }; // end of loop
+    }); // end of .get
+  
   }; //End of initialize
   initialize();
+
 
   // MIGHT NOT NEED THIS
   // var attachNewBucketEvent = function(){
@@ -172,3 +189,29 @@ $(function(){
         // $(this).click(function() {
         //   console.log("works");
         // });
+
+
+// google.maps.event.addListener(marker, 'click', function() {
+//   marker.info.open(map, marker);
+// });
+
+
+        //  google.maps.event.addListener(marker, 'click', function() {
+        //     // infowindow.setContent(this.title);
+        //     infowindow.setContent(iwContent);
+        //     infowindow.open(map, this);
+
+        //     console.log(this);
+        // });
+
+
+        // var test_data = data[i];
+        
+        // marker.addListener('click', function(data) {
+        //   // $('#myModal').modal('show');
+        //   console.log("modals");
+        //   console.log(test_data);
+        //   console.log(typeof test_data);
+       
+
+ // $('#myModal').modal('show');
