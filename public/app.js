@@ -129,7 +129,7 @@ $(function(){
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
-        var eventInfo = data[i].info
+        var eventInfo = data[i].info + "<a href='http://google.com' class='button'>Add to Bucket List</a>"
         var marker = new google.maps.Marker ({
           position: data[i].location,
           map: map,
@@ -137,10 +137,10 @@ $(function(){
           title: data[i].title
         });
 
-        // call the recursion function
+        // recursive function call
         attachEventInfo(marker, eventInfo);
 
-        // recursion function to attach event info to markers
+        // function to attach event info to markers
         function attachEventInfo(marker, eventInfo) {
           var infowindow = new google.maps.InfoWindow({
             content: eventInfo
