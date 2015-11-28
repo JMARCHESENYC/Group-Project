@@ -34,6 +34,7 @@ app.listen(port);
 // MODELS
 var User = require('./models/user');
 
+
 // ROUTES///////////////////////////////////////////////////////////////////
 
 app.get('/users', function(req, res){
