@@ -1,14 +1,14 @@
 // TEST
 console.log('Page loaded...')
 
-
 user = null;
 
 // WINDOW ONLOAD
 $(function(){
   // CLICK EVENTS///////////////////////////////////////////////////////
 
-"use strict";
+  "use strict";
+
   $("#signup-button").click(function(){
     // TEST
     console.log("Signup form loading...");
@@ -25,12 +25,6 @@ $(function(){
     // console.log('add worked...')
     displayEvent();
   });
-
-  // DON'T NEED
-  // $("#signup-register").click(function(){
-  //   console.log("Account registering...");
-  //   createUser();
-  // });
 
   // RENDERING/////////////////////////////////////////////////////////
 
@@ -110,7 +104,7 @@ $(function(){
   var initialize = function(data) {
 
     var infowindow = new google.maps.InfoWindow();
-    
+
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
       zoom: 2,
       // maxZoom: 12,
@@ -125,7 +119,7 @@ $(function(){
 
     $.get('/bucket_list', function(data) {
 
-     
+
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
@@ -146,19 +140,18 @@ $(function(){
             content: eventInfo
           });
 
-        // attache click event to markers
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
-        }
+          // attach click event to markers
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+        };
 
 
       }; // end of loop
     }); // end of .get
-  
+
   }; //End of initialize
   initialize();
-
 
   // MIGHT NOT NEED THIS
   // var attachNewBucketEvent = function(){
@@ -184,34 +177,6 @@ $(function(){
 
 
 // TEMP STUFF && GARBAGE//////////////////////////////////////////////////
- // $("marker").attr("class","marker");
-        
-        // $(this).click(function() {
-        //   console.log("works");
-        // });
 
 
-// google.maps.event.addListener(marker, 'click', function() {
-//   marker.info.open(map, marker);
-// });
 
-
-        //  google.maps.event.addListener(marker, 'click', function() {
-        //     // infowindow.setContent(this.title);
-        //     infowindow.setContent(iwContent);
-        //     infowindow.open(map, this);
-
-        //     console.log(this);
-        // });
-
-
-        // var test_data = data[i];
-        
-        // marker.addListener('click', function(data) {
-        //   // $('#myModal').modal('show');
-        //   console.log("modals");
-        //   console.log(test_data);
-        //   console.log(typeof test_data);
-       
-
- // $('#myModal').modal('show');

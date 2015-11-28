@@ -1,7 +1,7 @@
 // SETUP//////////////////////////////////////////////////////////////////
 // DEPENDENCIES
+"use strict";
 
-"use strict"
 var express      = require('express'),
     mongoose     = require('mongoose'),
     bodyParser   = require('body-parser'),
@@ -34,8 +34,9 @@ app.listen(port);
 // MODELS
 var User = require('./models/user');
 
-// ROUTES///////////////////////////////////////////////////////////////////
 
+// ROUTES///////////////////////////////////////////////////////////////////
+// SHOW ALL USERS
 app.get('/users', function(req, res){
 
   User.find({})
@@ -46,6 +47,7 @@ app.get('/users', function(req, res){
   console.log('Loading users...');
 });
 
+// CREATE USER
 app.post('/users', function(req, res){
 
   password_hash = md5(req.body.password);
@@ -71,12 +73,25 @@ app.post('/users', function(req, res){
   });
 });
 
+// USER EDIT/UPDATE
+app.put('/user/:id', function(req, res){
+
+  User.findOneAndUpdate( {_id: req.params.id}, req,body, function(err, user){
+    res.send(user);
+  });
+});
+
+// DELETE USER
+app.delete('/user/:id', function(req, res){
+  User.findOneAndRemove( {_id: req.params.id}, function(err){
+    res.send('User has been removed');
+  });
+});
+
+// SHOW BUCKET LIST
 app.get("/bucket_list", function(req,res){
-
-  res.send(bucket_list)
-
-})
-
+  res.send(bucket_list);
+});
 
 
 // TERMINAL MSGS//////////////////////////////////////////////////////////
