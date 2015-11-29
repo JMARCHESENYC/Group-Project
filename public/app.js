@@ -1,7 +1,7 @@
 // TEST
 console.log('Page loaded...')
 
-user = null;
+var user = null;
 
 // WINDOW ONLOAD
 $(function(){
@@ -92,6 +92,7 @@ $(function(){
     var userData = {
       username: username
     };
+
     $.ajax({
       url: "http://localhost:3000/users",
       method: "POST",
@@ -173,12 +174,20 @@ $(function(){
     });
   };
 
-  var editUser = function($id){
-    console.log($id)
-  };
+  // USER EDIT
+  // var editUser = function($id){
+  //   console.log('Id is ' + $id);
+  //   console.log($(this).data("id"))
 
+  //   // $.ajax({
+  //   //   url: "http://localhost:3000/users/" + $id,
+  //   //   method: "GET"
+  //   // }).done(userUpdateForm);
+  // };
+  // editUser();
 
-  console.log(user);
+  console.log('User is ' + user);
+  console.log('The cookie is ' + document.cookie)
 }); // END OF WINDOW ONLOAD
 
 

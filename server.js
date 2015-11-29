@@ -73,6 +73,12 @@ app.post('/users', function(req, res){
   });
 });
 
+// SINGLE USER
+app.get('/user', function(req, res){
+  console.log("Cookies :  " + req.cookies);
+  res.send("Cookies logged");
+});
+
 // USER EDIT/UPDATE
 app.put('/user/:id', function(req, res){
 
@@ -89,7 +95,7 @@ app.delete('/user/:id', function(req, res){
 });
 
 // SHOW BUCKET LIST
-app.get("/bucket_list", function(req,res){
+app.get('/bucket_list', function(req,res){
   res.send(bucket_list);
 });
 
