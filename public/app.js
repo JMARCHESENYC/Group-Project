@@ -114,7 +114,7 @@ $(function(){
       draggable: true,
       tilt: 45,
       // mapTypeControl: false,
-      center: new google.maps.LatLng(31.639215, -7.982481),
+      center: new google.maps.LatLng(23.639215, -7.982481),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
@@ -124,7 +124,8 @@ $(function(){
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
-        var eventInfo = data[i].info + "<br>" + "<a href='http://google.com' class='button'>Add to Bucket List</a>"
+        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='http://google.com' class='button'><br>Add to Bucket List</a>"
+
         var marker = new google.maps.Marker ({
           position: data[i].location,
           map: map,
