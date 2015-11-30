@@ -21,7 +21,7 @@ $(function(){
 
   });
 
-  // TEST LINK to myBucketList
+  // // TEST LINK to myBucketList
   // $('#mylist-add').click(function(){
   //   // console.log('add worked...')
   //   displayBucketEvent(3);
@@ -126,7 +126,7 @@ $(function(){
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
-        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='http://google.com' id='marker-link' class='button'><br>Add to Bucket List</a>";
+        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='/users' id='marker-link' class='button'><br>Add to Bucket List</a>";
 
         var marker = new google.maps.Marker ({
           position: data[i].location,
@@ -136,18 +136,19 @@ $(function(){
         });
 
         // link to myBucketList
-        var listLink = function () {
-          $('#mylist-add').click(function(){
-            // console.log('add worked...')
+        var listLink = function() {
+          // $('#marker-link').click(function(){
+            console.log('addition worked...');
             displayBucketEvent(i);
           });
         };
+        // listLink();
 
         // recursive function call
-        attachEventInfo(marker, eventInfo, listLink);
+        attachEventInfo(marker, eventInfo);
 
         // function to attach event info to markers
-        function attachEventInfo(marker, eventInfo, listLink) {
+        function attachEventInfo(marker, eventInfo) {
           var infowindow = new google.maps.InfoWindow({
             content: eventInfo
           });
