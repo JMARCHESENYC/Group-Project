@@ -124,7 +124,9 @@ $(function(){
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
-        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='http://google.com' class='button'><br>Add to Bucket List</a>"
+        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='#' class='button addEvent'><br>Add to Bucket List</a>"
+
+      
 
         var marker = new google.maps.Marker ({
           position: data[i].location,
@@ -186,6 +188,9 @@ $(function(){
   //   // }).done(userUpdateForm);
   // };
   // editUser();
+$("#map-canvas").on("click", ".addEvent",function() {
+  console.log($(".addEvent"))
+})
 
   console.log('User is ' + user);
   console.log('The cookie is ' + document.cookie)
