@@ -23,7 +23,7 @@ $(function(){
 
   $('#mylist-add').click(function(){
     // console.log('add worked...')
-    displayEvent();
+    displayBucketEvent();
   });
 
   // DON'T NEED
@@ -110,7 +110,7 @@ $(function(){
   var initialize = function(data) {
 
     var infowindow = new google.maps.InfoWindow();
-    
+
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
       zoom: 2,
       // maxZoom: 12,
@@ -125,11 +125,12 @@ $(function(){
 
     $.get('/bucket_list', function(data) {
 
-     
+
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
-        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='http://google.com' class='button'><br>Add to Bucket List</a>"
+        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='http://google.com' class='button'><br>Add to Bucket List</a>";
+
         var marker = new google.maps.Marker ({
           position: data[i].location,
           map: map,
@@ -144,7 +145,7 @@ $(function(){
         function attachEventInfo(marker, eventInfo) {
           var infowindow = new google.maps.InfoWindow({
             content: eventInfo
-          });   
+          });
 
         // attache click event to markers
         marker.addListener('click', function() {
@@ -155,7 +156,7 @@ $(function(){
 
       }; // end of loop
     }); // end of .get
-  
+
   }; //End of initialize
   initialize();
 
@@ -164,19 +165,15 @@ $(function(){
   // var attachNewBucketEvent = function(){
   // };
 
-  var displayEvent = function(){
-    // console.log('word')
-    var test = "Hello";
+  var displayBucketEvent = function(){
 
     var resultDiv = $("#bucket-list-todo");
     resultDiv.empty();
 
-    // var source = $("#bucket-list-todo").html();
-    // var template = Handlebars.compile(source);
-
     $.get('/bucket_list', function(data) {
-      resultDiv.append(test);
-      // resultDiv.append(template(data[0]));
+      console.log(data[1].title)
+
+      resultDiv.append(data[3].title);
     });
   };
 
@@ -185,7 +182,7 @@ $(function(){
 
 // TEMP STUFF && GARBAGE//////////////////////////////////////////////////
  // $("marker").attr("class","marker");
-        
+
         // $(this).click(function() {
         //   console.log("works");
         // });
@@ -206,12 +203,12 @@ $(function(){
 
 
         // var test_data = data[i];
-        
+
         // marker.addListener('click', function(data) {
         //   // $('#myModal').modal('show');
         //   console.log("modals");
         //   console.log(test_data);
         //   console.log(typeof test_data);
-       
+
 
  // $('#myModal').modal('show');
