@@ -26,7 +26,7 @@ app.use(express.static('public'));
 app.use(cookieParser());
 
 // DATABASE
-mongoose.connect('mongodb://localhost/bucket_list');
+// mongoose.connect('mongodb://localhost/bucket_list');
 
 // LISTENER
 app.listen(port);
@@ -35,7 +35,7 @@ app.listen(port);
 var User = require('./models/user');
 
 // HEROKU STUFFS
-var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/gametime';
+var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/bucket_list';
 mongoose.connect(mongoUri);
 
 // ROUTES///////////////////////////////////////////////////////////////////
