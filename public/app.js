@@ -4,10 +4,12 @@ console.log('Page loaded...')
 var user = null;
 
 
-var clicked = function() {
-  var clickCount = getCount();
-  console.log('party in the usa' + clickCount);
-};
+// var clicked = function() {
+//   var clickCount = getCount();
+//   console.log('party in the usa' + clickCount);
+// };
+
+
 
 
 // WINDOW ONLOAD
@@ -153,13 +155,22 @@ $(function(){
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
-        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='#' id='marker-link' class='button' onclick='clicked();'><br>Add to Bucket List</a>";
+
+
+        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info 
 
         var marker = new google.maps.Marker ({
           position: data[i].location,
           map: map,
           animation: google.maps.Animation.DROP,
           title: data[i].title
+        });
+
+        $('#mylist-add').click(function(){
+    // console.log('add worked...')
+
+            var x = Math.floor(Math.random() * 35);
+
         });
 
         // // link to myBucketList
@@ -185,7 +196,7 @@ $(function(){
           // attach click event to markers
           marker.addListener('click', function() {
             infowindow.open(map, marker);
-            consoleLog
+            // consoleLog
           });
         };
 
@@ -202,7 +213,7 @@ $(function(){
   var displayBucketEvent = function(x){
 
     var resultDiv = $("#bucket-list-todo");
-    resultDiv.empty();
+    // resultDiv.empty();
 
     var eventNumber = x;
 
@@ -225,9 +236,9 @@ $(function(){
   //   // }).done(userUpdateForm);
   // };
   // editUser();
-$("#map-canvas").on("click", ".addEvent",function() {
-  console.log($(".addEvent"))
-})
+// $("#map-canvas").on("click", ".addEvent",function() {
+//   console.log($(".addEvent"))
+// })
 
   console.log('User is ' + user);
   console.log('The cookie is ' + document.cookie)
@@ -280,5 +291,3 @@ $("#map-canvas").on("click", ".addEvent",function() {
 //     data: instructorData
 //   }).done(getInstructors);
 // };
-
-
