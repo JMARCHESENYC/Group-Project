@@ -28,11 +28,14 @@ $(function(){
 
   });
 
-  // // TEST LINK to myBucketList
-  // $('#mylist-add').click(function(){
-  //   // console.log('add worked...')
-  //   displayBucketEvent(6);
-  // });
+  // TEST LINK to myBucketList
+  $('#mylist-add').click(function(){
+    // console.log('add worked...')
+
+    var x = Math.floor(Math.random() * 35);
+
+    displayBucketEvent(x);
+  });
 
 
   // RENDERING////////////////////////////////////////////////////////
