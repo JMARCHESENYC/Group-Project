@@ -51,7 +51,7 @@ app.get('/users', function(req, res){
 // CREATE USER
 app.post('/users', function(req, res){
 
-  password_hash = md5(req.body.password);
+  var password_hash = md5(req.body.password);
 
   var user = new User({
     username: req.body.username,
