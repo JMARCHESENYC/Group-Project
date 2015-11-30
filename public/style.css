@@ -74,7 +74,7 @@ body{
 
 #bucket-list-todo{
 	position: absolute;
-	left: 120px;
+	left: 5%;
     background-color: lightgrey;
     width: 500px;
     padding: 100px;
@@ -84,7 +84,7 @@ body{
 
 #bucket-list-completed{
 	position: absolute;
-	left: 720px;
+	left: 50%;
 	background-color: lightgrey;
     width: 500px;
     padding: 100px;

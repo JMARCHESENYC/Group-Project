@@ -34,6 +34,9 @@ app.listen(port);
 // MODELS
 var User = require('./models/user');
 
+// HEROKU STUFFS
+var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/gametime';
+mongoose.connect(mongoUri);
 
 // ROUTES///////////////////////////////////////////////////////////////////
 
