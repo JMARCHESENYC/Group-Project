@@ -33,7 +33,6 @@ $(function(){
     // console.log('add worked...')
 
     var x = Math.floor(Math.random() * 35);
-
     displayBucketEvent(x);
   });
 
@@ -202,7 +201,7 @@ $(function(){
   var displayBucketEvent = function(x){
 
     var resultDiv = $("#bucket-list-todo");
-    resultDiv.empty();
+    // resultDiv.empty();
 
     var eventNumber = x;
 
@@ -210,7 +209,12 @@ $(function(){
       var dataIndex = eventNumber;
       console.log(data[dataIndex].title);
 
-      resultDiv.append(data[dataIndex].title + "<br>");
+      resultDiv.append(data[dataIndex].title + "<br>"  + "<button class='btn btn-primary'  id='mylist-complete'>I did it!!</button>" + "<br>" + "<br>");
+
+    });
+
+    $('#mylist-complete').click(function(){
+      console.log('test')
     });
   };
 
@@ -225,6 +229,7 @@ $(function(){
   //   // }).done(userUpdateForm);
   // };
   // editUser();
+
 $("#map-canvas").on("click", ".addEvent",function() {
   console.log($(".addEvent"))
 })
