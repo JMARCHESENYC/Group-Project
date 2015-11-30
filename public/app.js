@@ -54,6 +54,7 @@ $(function(){
     $("#signup-button").hide();
     $("#login-button").hide();
     $("#signup-form").hide();
+    
 
     $("#bucket-display").show();
     console.log('works')
@@ -202,7 +203,7 @@ $(function(){
   var displayBucketEvent = function(x){
 
     var resultDiv = $("#bucket-list-todo");
-    resultDiv.empty();
+    // resultDiv.empty();
 
     var eventNumber = x;
 
