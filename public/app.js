@@ -3,6 +3,13 @@ console.log('Page loaded...')
 
 var user = null;
 
+
+var clicked = function() {
+  var clickCount = getCount();
+  console.log('party in the usa' + clickCount);
+};
+
+
 // WINDOW ONLOAD
 $(function(){
   // CLICK EVENTS///////////////////////////////////////////////////////
@@ -21,12 +28,17 @@ $(function(){
 
   });
 
+  // TEST LINK to myBucketList
   $('#mylist-add').click(function(){
     // console.log('add worked...')
-    displayEvent();
+
+    var x = Math.floor(Math.random() * 35);
+
+    displayBucketEvent(x);
   });
 
-  // RENDERING/////////////////////////////////////////////////////////
+
+  // RENDERING////////////////////////////////////////////////////////
 
   var getUsers = function(){
     console.log('Pre-Ajax..');
@@ -34,24 +46,34 @@ $(function(){
       url: "http://localhost:3000/users",
       method: "GET",
       dataType: "json"
-    }).done(renderUsers);
+    }).done();
   };
 
-  var renderUsers = function(data){
-    var resultDiv = $("#results-show");
-    resultDiv.empty();
+  var renderBucketList = function(){
 
     $("#signup-button").hide();
     $("#login-button").hide();
     $("#signup-form").hide();
 
-    var source = $("#user-view-template").html();
-    var template = Handlebars.compile(source);
-
-    for (var x = 0; x < data.length; x++){
-      resultDiv.append(template(data[x]));
-    };
+    $("#bucket-display").show();
+    console.log('works')
   };
+
+  // var renderUsers = function(data){
+  //   var resultDiv = $("#results-show");
+  //   resultDiv.empty();
+
+  //   $("#signup-button").hide();
+  //   $("#login-button").hide();
+  //   $("#signup-form").hide();
+
+  //   var source = $("#user-view-template").html();
+  //   var template = Handlebars.compile(source);
+
+  //   for (var x = 0; x < data.length; x++){
+  //     resultDiv.append(template(data[x]));
+  //   };
+  // };
 
   var attachNewUserEvent = function(){
     $('#register').click(function(){
@@ -59,6 +81,7 @@ $(function(){
       console.log("User registered...");
 
       createUser();
+      renderBucketList();
     });
   };
 
@@ -101,6 +124,7 @@ $(function(){
     resultDiv.empty();
   };
 
+
   // MAP SETUP
   var initialize = function(data) {
 
@@ -118,15 +142,18 @@ $(function(){
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
+
+
     $.get('/bucket_list', function(data) {
 
+      // var clicked = function() {
+      //   console.log('party in the usa');
+      // }
 
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
-        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='#' class='button addEvent'><br>Add to Bucket List</a>"
-
-      
+        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='#' id='marker-link' class='button' onclick='clicked();'><br>Add to Bucket List</a>";
 
         var marker = new google.maps.Marker ({
           position: data[i].location,
@@ -134,6 +161,17 @@ $(function(){
           animation: google.maps.Animation.DROP,
           title: data[i].title
         });
+
+        // // link to myBucketList
+        // var listLink = function() {
+        //   $('#marker-link').click(function(){
+        //     console.log('addition worked...');
+        //     displayBucketEvent(i);
+        //   });
+        // };
+        // // listLink();
+
+        // var consoleLog = console.log(data[i].title);
 
         // recursive function call
         attachEventInfo(marker, eventInfo);
@@ -147,9 +185,9 @@ $(function(){
           // attach click event to markers
           marker.addListener('click', function() {
             infowindow.open(map, marker);
+            consoleLog
           });
         };
-
 
       }; // end of loop
     }); // end of .get
@@ -161,19 +199,18 @@ $(function(){
   // var attachNewBucketEvent = function(){
   // };
 
-  var displayEvent = function(){
-    // console.log('word')
-    var test = "Hello";
+  var displayBucketEvent = function(x){
 
     var resultDiv = $("#bucket-list-todo");
     resultDiv.empty();
 
-    // var source = $("#bucket-list-todo").html();
-    // var template = Handlebars.compile(source);
+    var eventNumber = x;
 
-    $.get('/bucket_list', function(data) {
-      resultDiv.append(test);
-      // resultDiv.append(template(data[0]));
+    $.get('/bucket_list', function(data, dataIndex) {
+      var dataIndex = eventNumber;
+      console.log(data[dataIndex].title);
+
+      resultDiv.append(data[dataIndex].title + "<br>");
     });
   };
 
@@ -198,6 +235,7 @@ $("#map-canvas").on("click", ".addEvent",function() {
 
 
 // TEMP STUFF && GARBAGE//////////////////////////////////////////////////
+
 // var editInstructor = function($id) {
 //   // start by finding the id of the instructor. it's in the instructor-container class!
 //   console.log($id);

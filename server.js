@@ -1,5 +1,6 @@
 // SETUP//////////////////////////////////////////////////////////////////
 // DEPENDENCIES
+
 "use strict";
 
 var express      = require('express'),
@@ -25,7 +26,7 @@ app.use(express.static('public'));
 app.use(cookieParser());
 
 // DATABASE
-mongoose.connect('mongodb://localhost/bucket_list');
+// mongoose.connect('mongodb://localhost/bucket_list');
 
 // LISTENER
 app.listen(port);
@@ -33,8 +34,12 @@ app.listen(port);
 // MODELS
 var User = require('./models/user');
 
+// HEROKU STUFFS
+var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/bucket_list';
+mongoose.connect(mongoUri);
 
 // ROUTES///////////////////////////////////////////////////////////////////
+
 // SHOW ALL USERS
 app.get('/users', function(req, res){
 
