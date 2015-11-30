@@ -10,7 +10,6 @@ var express      = require('express'),
     md5          = require('md5'),
     cookieParser = require('cookie-parser');
 
-
 var port         = process.env.PORT || 3000;
 var app          = express();
 
@@ -38,6 +37,7 @@ var User = require('./models/user');
 
 // ROUTES///////////////////////////////////////////////////////////////////
 
+// SHOW ALL USERS
 app.get('/users', function(req, res){
 
   User.find({})
@@ -48,6 +48,7 @@ app.get('/users', function(req, res){
   console.log('Loading users...');
 });
 
+// CREATE USER
 app.post('/users', function(req, res){
 
   password_hash = md5(req.body.password);
@@ -73,12 +74,31 @@ app.post('/users', function(req, res){
   });
 });
 
-app.get("/bucket_list", function(req,res){
+// SINGLE USER
+app.get('/user', function(req, res){
+  console.log("Cookies :  " + req.cookies);
+  res.send("Cookies logged");
+});
 
-  res.send(bucket_list)
+// USER EDIT/UPDATE
+app.put('/user/:id', function(req, res){
 
-})
+  User.findOneAndUpdate( {_id: req.params.id}, req,body, function(err, user){
+    res.send(user);
+  });
+});
 
+// DELETE USER
+app.delete('/user/:id', function(req, res){
+  User.findOneAndRemove( {_id: req.params.id}, function(err){
+    res.send('User has been removed');
+  });
+});
+
+// SHOW BUCKET LIST
+app.get('/bucket_list', function(req,res){
+  res.send(bucket_list);
+});
 
 
 // TERMINAL MSGS//////////////////////////////////////////////////////////

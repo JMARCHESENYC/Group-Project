@@ -1,12 +1,12 @@
 // TEST
 console.log('Page loaded...')
 
-
-user = null;
+var user = null;
 
 // WINDOW ONLOAD
 $(function(){
   // CLICK EVENTS///////////////////////////////////////////////////////
+
   "use strict";
 
   $("#signup-button").click(function(){
@@ -21,11 +21,12 @@ $(function(){
 
   });
 
-  // TEST LIMK to myBucketList
+  // TEST LINK to myBucketList
   // $('#mylist-add').click(function(){
   //   // console.log('add worked...')
   //   displayBucketEvent(3);
   // });
+
 
   // RENDERING/////////////////////////////////////////////////////////
 
@@ -93,6 +94,7 @@ $(function(){
     var userData = {
       username: username
     };
+
     $.ajax({
       url: "http://localhost:3000/users",
       method: "POST",
@@ -150,7 +152,7 @@ $(function(){
             content: eventInfo
           });
 
-          // attache click event to markers
+          // attach click event to markers
           marker.addListener('click', function() {
             infowindow.open(map, marker);
           });
@@ -161,7 +163,6 @@ $(function(){
 
   }; //End of initialize
   initialize();
-
 
   // MIGHT NOT NEED THIS
   // var attachNewBucketEvent = function(){
@@ -182,8 +183,68 @@ $(function(){
     });
   };
 
+  // USER EDIT
+  // var editUser = function($id){
+  //   console.log('Id is ' + $id);
+  //   console.log($(this).data("id"))
+
+  //   // $.ajax({
+  //   //   url: "http://localhost:3000/users/" + $id,
+  //   //   method: "GET"
+  //   // }).done(userUpdateForm);
+  // };
+  // editUser();
+
+  console.log('User is ' + user);
+  console.log('The cookie is ' + document.cookie)
 }); // END OF WINDOW ONLOAD
 
 
 // TEMP STUFF && GARBAGE//////////////////////////////////////////////////
+
+// var editInstructor = function($id) {
+//   // start by finding the id of the instructor. it's in the instructor-container class!
+//   console.log($id);
+//   $.ajax({
+//     url: "http://localhost:3000/instructors/" + $id,
+//     method: "GET",
+//     // data: 'json'
+//   }).done(updateForm);
+// ​
+//   // code the ajax call, be sure to add the id onto the url
+//   // use updateForm for the callback to .done()
+// };
+// ​
+// var updateForm = function(data) {
+//   var resultDiv = $('#form-container');
+//   $("#horizontal").empty();
+//   resultDiv.empty();
+//   resultDiv.show();
+//   var template = Handlebars.compile($("#instructor-edit-template").html());
+//   resultDiv.append(template(data));
+//   $('.edit-instructor-submit').click(function () {
+//     saveUpdate();
+//   });
+// };
+// ​
+// var saveUpdate = function() {
+//   var $id = $('#instructor-id').val();
+//   // What other variables do  we need in the form?
+//   var $instructorName = $('#instructor-name').val();
+//   var $instructorMotto = $('#instructor-motto').val();
+// ​
+//   // create an instructorData object mapping the same k/v pairs to the variables you just made
+//   var instructorData = {
+//     name: $instructorName,
+//     motto: $instructorMotto
+//   }
+// ​
+//   // Make the ajax call similar to createInstructor except make it a put request
+//   $.ajax({
+//     url: "http://localhost:3000/instructors/" + test,
+//     method: "PUT",
+//     data: instructorData
+//   }).done(getInstructors);
+// };
+
 
