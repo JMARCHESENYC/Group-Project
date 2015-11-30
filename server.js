@@ -1,7 +1,8 @@
 // SETUP//////////////////////////////////////////////////////////////////
 // DEPENDENCIES
 
-"use strict"
+"use strict";
+
 var express      = require('express'),
     mongoose     = require('mongoose'),
     bodyParser   = require('body-parser'),

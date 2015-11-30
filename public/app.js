@@ -7,8 +7,8 @@ user = null;
 // WINDOW ONLOAD
 $(function(){
   // CLICK EVENTS///////////////////////////////////////////////////////
+  "use strict";
 
-"use strict";
   $("#signup-button").click(function(){
     // TEST
     console.log("Signup form loading...");
@@ -21,15 +21,10 @@ $(function(){
 
   });
 
-  $('#mylist-add').click(function(){
-    // console.log('add worked...')
-    displayBucketEvent();
-  });
-
-  // DON'T NEED
-  // $("#signup-register").click(function(){
-  //   console.log("Account registering...");
-  //   createUser();
+  // TEST LIMK to myBucketList
+  // $('#mylist-add').click(function(){
+  //   // console.log('add worked...')
+  //   displayBucketEvent(3);
   // });
 
   // RENDERING/////////////////////////////////////////////////////////
@@ -129,7 +124,7 @@ $(function(){
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
-        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='http://google.com' class='button'><br>Add to Bucket List</a>";
+        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='http://google.com' id='marker-link' class='button'><br>Add to Bucket List</a>";
 
         var marker = new google.maps.Marker ({
           position: data[i].location,
@@ -138,21 +133,28 @@ $(function(){
           title: data[i].title
         });
 
+        // link to myBucketList
+        var listLink = function () {
+          $('#mylist-add').click(function(){
+            // console.log('add worked...')
+            displayBucketEvent(i);
+          });
+        };
+
         // recursive function call
-        attachEventInfo(marker, eventInfo);
+        attachEventInfo(marker, eventInfo, listLink);
 
         // function to attach event info to markers
-        function attachEventInfo(marker, eventInfo) {
+        function attachEventInfo(marker, eventInfo, listLink) {
           var infowindow = new google.maps.InfoWindow({
             content: eventInfo
           });
 
-        // attache click event to markers
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
-        }
-
+          // attache click event to markers
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+        };
 
       }; // end of loop
     }); // end of .get
@@ -165,15 +167,18 @@ $(function(){
   // var attachNewBucketEvent = function(){
   // };
 
-  var displayBucketEvent = function(){
+  var displayBucketEvent = function(x){
 
     var resultDiv = $("#bucket-list-todo");
     resultDiv.empty();
 
-    $.get('/bucket_list', function(data) {
-      console.log(data[1].title)
+    var eventNumber = x;
 
-      resultDiv.append(data[3].title);
+    $.get('/bucket_list', function(data, dataIndex) {
+      var dataIndex = eventNumber;
+      console.log(data[dataIndex].title);
+
+      resultDiv.append(data[dataIndex].title + "<br>");
     });
   };
 
@@ -181,34 +186,4 @@ $(function(){
 
 
 // TEMP STUFF && GARBAGE//////////////////////////////////////////////////
- // $("marker").attr("class","marker");
 
-        // $(this).click(function() {
-        //   console.log("works");
-        // });
-
-
-// google.maps.event.addListener(marker, 'click', function() {
-//   marker.info.open(map, marker);
-// });
-
-
-        //  google.maps.event.addListener(marker, 'click', function() {
-        //     // infowindow.setContent(this.title);
-        //     infowindow.setContent(iwContent);
-        //     infowindow.open(map, this);
-
-        //     console.log(this);
-        // });
-
-
-        // var test_data = data[i];
-
-        // marker.addListener('click', function(data) {
-        //   // $('#myModal').modal('show');
-        //   console.log("modals");
-        //   console.log(test_data);
-        //   console.log(typeof test_data);
-
-
- // $('#myModal').modal('show');
