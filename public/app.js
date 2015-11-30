@@ -53,6 +53,7 @@ $(function(){
     $("#signup-button").hide();
     $("#login-button").hide();
     $("#signup-form").hide();
+    
 
     $("#bucket-display").show();
     console.log('works')

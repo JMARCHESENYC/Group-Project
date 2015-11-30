@@ -66,26 +66,36 @@ body{
 
 #mylist-add{
 	font-family: 'Play', sans-serif;
+	position: absolute;
+	left: 5%;
+	top: 78%;
 }
 
 #mylist-complete{
 	font-family: 'Play', sans-serif;
+	position: absolute;
+	left: 49%;
 }
 
 #bucket-list-todo{
+	text-align: center;
+	font-family: 'Play', sans-serif;
+	font-size: 20px;
 	position: absolute;
 	left: 5%;
-    background-color: lightgrey;
+    background-color: white;
     width: 500px;
     padding: 100px;
     border: 10px solid navy;
     margin: 25px;
+    vertical-align: top;
 }
 
 #bucket-list-completed{
+	font-family: 'Play', sans-serif;
 	position: absolute;
 	left: 50%;
-	background-color: lightgrey;
+	background-color: white;
     width: 500px;
     padding: 100px;
     border: 10px solid navy;
@@ -103,6 +113,28 @@ body{
 	position: absolute;
     left: 39%;
     top: 675px;
+
+}
+
+#bucket-list-head{
+	font-family: 'Play', sans-serif;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	vertical-align: top;
+	top: 0%;
+	text-decoration: underline;
+
+}
+
+#bucket-list-header{
+	font-family: 'Play', sans-serif;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	vertical-align: top;
+	top: 0%;
+	text-decoration: underline;
 
 }
 
