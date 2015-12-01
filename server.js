@@ -25,9 +25,6 @@ app.use(express.static('public'));
 
 app.use(cookieParser());
 
-// DATABASE
-// mongoose.connect('mongodb://localhost/bucket_list');
-
 // LISTENER
 app.listen(port);
 
@@ -111,4 +108,7 @@ console.log('Server started on ' + port);
 
 // TEMP STUFF && GARBAGE//////////////////////////////////////////////////
 
+
+// DATABASE
+// mongoose.connect('mongodb://localhost/bucket_list');
 

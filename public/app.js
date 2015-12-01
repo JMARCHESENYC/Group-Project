@@ -3,13 +3,6 @@ console.log('Page loaded...')
 
 var user = null;
 
-// TEST
-// var clicked = function() {
-//   var clickCount = getCount();
-//   console.log('party in the usa' + clickCount);
-// };
-
-
 // WINDOW ONLOAD
 $(function(){
   // CLICK EVENTS///////////////////////////////////////////////////////
@@ -56,33 +49,8 @@ $(function(){
     $("#login-button").hide();
     $("#signup-form").hide();
 
-    // var wrapDiv = $("#bucket-display");
-    // var resultDiv = $('#bucket-container');
-    // $resultDiv.empty();
-
-    // $resultDiv.show();
-
-    // wrapDiv.on('click', '#register', function(){
-    // });
-
     console.log('bucket div rendered');
   };
-
-  // var renderUsers = function(data){
-  //   var resultDiv = $("#results-show");
-  //   resultDiv.empty();
-
-  //   $("#signup-button").hide();
-  //   $("#login-button").hide();
-  //   $("#signup-form").hide();
-
-  //   var source = $("#user-view-template").html();
-  //   var template = Handlebars.compile(source);
-
-  //   for (var x = 0; x < data.length; x++){
-  //     resultDiv.append(template(data[x]));
-  //   };
-  // };
 
   var attachNewUserEvent = function(){
     $('#register').click(function(){
@@ -157,18 +125,10 @@ $(function(){
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-
-
     $.get('/bucket_list', function(data) {
-
-      // var clicked = function() {
-      //   console.log('party in the usa');
-      // }
 
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
-
-
 
         var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info
 
@@ -180,22 +140,11 @@ $(function(){
         });
 
         $('#mylist-add').click(function(){
-    // console.log('add worked...')
+        // console.log('add worked...')
 
             var x = Math.floor(Math.random() * 35);
 
         });
-
-        // // link to myBucketList
-        // var listLink = function() {
-        //   $('#marker-link').click(function(){
-        //     console.log('addition worked...');
-        //     displayBucketEvent(i);
-        //   });
-        // };
-        // // listLink();
-
-        // var consoleLog = console.log(data[i].title);
 
         // recursive function call
         attachEventInfo(marker, eventInfo);
@@ -219,10 +168,6 @@ $(function(){
   }; //End of initialize
   initialize();
 
-  // MIGHT NOT NEED THIS
-  // var attachNewBucketEvent = function(){
-  // };
-
   var displayBucketEvent = function(x){
 
     var resultDiv = $("#bucket-list-todo");
@@ -238,8 +183,6 @@ $(function(){
       console.log(divNumber)
 
       console.log(data[eventNumber].title);
-
-      // resultDiv.append(data[eventNumber].title + "<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>");
 
       var $emptyBucket = $("<div id=" + divNumber + "></div>")
       var $bucketButton = $("<br>" + "<button id=" + eventNumber + " class='btn btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>")
@@ -333,3 +276,62 @@ $(function(){
 //     data: instructorData
 //   }).done(getInstructors);
 // };
+
+
+// TEST
+// var clicked = function() {
+//   var clickCount = getCount();
+//   console.log('party in the usa' + clickCount);
+// };
+
+
+    // var wrapDiv = $("#bucket-display");
+    // var resultDiv = $('#bucket-container');
+    // $resultDiv.empty();
+
+    // $resultDiv.show();
+
+    // wrapDiv.on('click', '#register', function(){
+    // });
+
+
+  // var renderUsers = function(data){
+  //   var resultDiv = $("#results-show");
+  //   resultDiv.empty();
+
+  //   $("#signup-button").hide();
+  //   $("#login-button").hide();
+  //   $("#signup-form").hide();
+
+  //   var source = $("#user-view-template").html();
+  //   var template = Handlebars.compile(source);
+
+  //   for (var x = 0; x < data.length; x++){
+  //     resultDiv.append(template(data[x]));
+  //   };
+  // };
+
+
+      // var clicked = function() {
+      //   console.log('party in the usa');
+      // }
+
+
+              // // link to myBucketList
+        // var listLink = function() {
+        //   $('#marker-link').click(function(){
+        //     console.log('addition worked...');
+        //     displayBucketEvent(i);
+        //   });
+        // };
+        // // listLink();
+
+        // var consoleLog = console.log(data[i].title);
+
+
+  // MIGHT NOT NEED THIS
+  // var attachNewBucketEvent = function(){
+  // };
+
+
+      // resultDiv.append(data[eventNumber].title + "<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>");
