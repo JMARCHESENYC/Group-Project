@@ -4,10 +4,10 @@ console.log('Page loaded...')
 var user = null;
 
 
-var clicked = function() {
-  var clickCount = getCount();
-  console.log('party in the usa' + clickCount);
-};
+// var clicked = function() {
+//   var clickCount = getCount();
+//   console.log('party in the usa' + clickCount);
+// };
 
 
 // WINDOW ONLOAD
@@ -32,7 +32,7 @@ $(function(){
   $('#mylist-add').click(function(){
     // console.log('add worked...')
 
-    var x = Math.floor(Math.random() * 35);
+    var x = Math.floor(Math.random() * 34);
     displayBucketEvent(x);
   });
 
@@ -53,7 +53,7 @@ $(function(){
     $("#signup-button").hide();
     $("#login-button").hide();
     $("#signup-form").hide();
-    
+
 
     $("#bucket-display").show();
     console.log('works')
@@ -206,18 +206,22 @@ $(function(){
 
     var eventNumber = x;
 
-    $.get('/bucket_list', function(data, dataIndex) {
-      var dataIndex = eventNumber;
-      console.log(data[dataIndex].title);
+    $.get('/bucket_list', function(data) {
 
-      resultDiv.append(data[dataIndex].title + "<br>"  + "<button class='btn btn-primary'  id='mylist-complete'>I did it!!</button>" + "<br>" + "<br>");
+      console.log(data[eventNumber].title);
+
+      resultDiv.append(data[eventNumber].title + "<br>"  + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>");
+
+      $('#' + eventNumber).click(function(){
+        // debugger
+        // $('button', '.bucket-todo').empty().remove();
+        console.log('rangers are the best')
+      });
+
 
     });
+  }; // END of displayBucketEvent
 
-    $('#mylist-complete').click(function(){
-      console.log('test')
-    });
-  };
 
   // USER EDIT
   // var editUser = function($id){
@@ -231,9 +235,9 @@ $(function(){
   // };
   // editUser();
 
-$("#map-canvas").on("click", ".addEvent",function() {
-  console.log($(".addEvent"))
-})
+  // $("#map-canvas").on("click", ".addEvent",function() {
+  //   console.log($(".addEvent"))
+  // })
 
   console.log('User is ' + user);
   console.log('The cookie is ' + document.cookie)
