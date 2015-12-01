@@ -1,5 +1,6 @@
 body{
 	font-family: 'Play', sans-serif;
+	background-image: url(http://1.bp.blogspot.com/-GOhoWLbAlBg/UxVSSoGaQiI/AAAAAAAAAJ8/rJgvAjcquxM/s1600/image.jpg);
 }
 
 #map-canvas{
@@ -13,7 +14,7 @@ body{
 	text-align: center;
 	font-size: 75px;
 	font-family: 'Play', sans-serif;
-
+	color: white;
 }
 
 #signup-button{
@@ -69,6 +70,7 @@ body{
 	position: absolute;
 	left: 5%;
 	top: 78%;
+
 }
 
 #mylist-complete{
@@ -86,7 +88,9 @@ body{
     background-color: white;
     width: 500px;
     padding: 100px;
-    border: 10px solid navy;
+    border: 10px;
+    border-style: solid;
+    border-color: #33CCFF;
     margin: 25px;
     vertical-align: top;
 }
@@ -98,7 +102,9 @@ body{
 	background-color: white;
     width: 500px;
     padding: 100px;
-    border: 10px solid navy;
+    border: 10px;
+    border-style: solid;
+    border-color: #33CCFF;
     margin: 25px;
 }
 
@@ -122,7 +128,7 @@ body{
 	font-size: 40px;
 	text-align: center;
 	vertical-align: top;
-	top: 0%;
+	margin-top: -80px;
 	text-decoration: underline;
 
 }
@@ -133,7 +139,7 @@ body{
 	font-size: 40px;
 	text-align: center;
 	vertical-align: top;
-	top: 0%;
+	margin-top: -80px;
 	text-decoration: underline;
 
 }
