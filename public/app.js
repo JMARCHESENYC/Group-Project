@@ -224,9 +224,18 @@ $(function(){
 
       console.log(data[eventNumber].title);
 
-      resultDiv.append(data[eventNumber].title + "<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>");
+      // resultDiv.append(data[eventNumber].title + "<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>");
 
-      $('#' + eventNumber).click(function(){
+      var $emptyBucket = $("<div id=" + divNumber + "></div>")
+      var $bucketButton = $("<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>")
+
+      $emptyBucket.append(data[eventNumber].title);
+      $emptyBucket.append($bucketButton);
+
+      $("#bucket-list-todo").append($emptyBucket);
+
+
+      $('#' + divNumber).click(function(){
         // debugger
         $('#' + eventNumber).hide();
         $('#' + divNumber).hide();
