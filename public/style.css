@@ -95,8 +95,12 @@ body{
     vertical-align: top;
 }
 
+
+
 #bucket-list-completed{
 	font-family: 'Play', sans-serif;
+	font-size: 20px;
+	text-align: center;
 	position: absolute;
 	left: 50%;
 	background-color: white;
