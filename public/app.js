@@ -14,6 +14,8 @@ var user = null;
 $(function(){
   // CLICK EVENTS///////////////////////////////////////////////////////
 
+  $('#bucket-container').hide();
+
   "use strict";
 
   $("#signup-button").click(function(){
@@ -54,9 +56,16 @@ $(function(){
     $("#login-button").hide();
     $("#signup-form").hide();
 
+    // var wrapDiv = $("#bucket-display");
+    // var resultDiv = $('#bucket-container');
+    // $resultDiv.empty();
 
-    $("#bucket-display").show();
-    console.log('works')
+    // $resultDiv.show();
+
+    // wrapDiv.on('click', '#register', function(){
+    // });
+
+    console.log('bucket div rendered');
   };
 
   // var renderUsers = function(data){
@@ -81,7 +90,13 @@ $(function(){
       console.log("User registered...");
 
       createUser();
-      renderBucketList();
+
+      $("#signup-button").hide();
+      $("#login-button").hide();
+      $("#signup-form").hide();
+      $('#bucket-container').show();
+
+      // renderBucketList();
     });
   };
 
