@@ -42,7 +42,7 @@ $(function(){
   var getUsers = function(){
     console.log('Pre-Ajax..');
     $.ajax({
-      url: "http://localhost:3000/users",
+      url: "/users",
       method: "GET",
       dataType: "json"
     }).done();
@@ -117,7 +117,7 @@ $(function(){
     };
 
     $.ajax({
-      url: "http://localhost:3000/users",
+      url: "/users",
       method: "POST",
       data: userData
     }).done(getUsers);

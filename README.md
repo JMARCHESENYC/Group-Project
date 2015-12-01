@@ -19,6 +19,7 @@ Links:
 	- GitHub
 		- https://github.com/JMARCHESENYC/Group-Project
 	- Heroku
+		- https://intense-wave-8057.herokuapp.com/
 	- Trello link
 		- https://trello.com/b/t0tm1Sd3
 	- Wireframes
