@@ -227,7 +227,7 @@ $(function(){
       // resultDiv.append(data[eventNumber].title + "<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>");
 
       var $emptyBucket = $("<div id=" + divNumber + "></div>")
-      var $bucketButton = $("<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>")
+      var $bucketButton = $("<br>" + "<button id=" + eventNumber + " class='btn btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>")
 
       $emptyBucket.append(data[eventNumber].title);
       $emptyBucket.append($bucketButton);
