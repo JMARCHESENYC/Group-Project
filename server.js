@@ -36,7 +36,7 @@ var User = require('./models/user');
 
 // HEROKU STUFFS
 var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/bucket_list';
-mongoose.connect(mongoUri);
+mongoose.createConnection(mongoUri);
 
 // ROUTES///////////////////////////////////////////////////////////////////
 
