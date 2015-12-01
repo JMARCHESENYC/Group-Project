@@ -3,13 +3,11 @@ console.log('Page loaded...')
 
 var user = null;
 
-
+// TEST
 // var clicked = function() {
 //   var clickCount = getCount();
 //   console.log('party in the usa' + clickCount);
 // };
-
-
 
 
 // WINDOW ONLOAD
@@ -34,8 +32,7 @@ $(function(){
   $('#mylist-add').click(function(){
     // console.log('add worked...')
 
-    var x = Math.floor(Math.random() * 35);
-
+    var x = Math.floor(Math.random() * 34);
     displayBucketEvent(x);
   });
 
@@ -56,7 +53,7 @@ $(function(){
     $("#signup-button").hide();
     $("#login-button").hide();
     $("#signup-form").hide();
-    
+
 
     $("#bucket-display").show();
     console.log('works')
@@ -158,7 +155,7 @@ $(function(){
 
 
 
-        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info 
+        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info
 
         var marker = new google.maps.Marker ({
           position: data[i].location,
@@ -214,17 +211,44 @@ $(function(){
   var displayBucketEvent = function(x){
 
     var resultDiv = $("#bucket-list-todo");
+    var resultDivDidit = $('#bucket-list-completed');
     // resultDiv.empty();
 
     var eventNumber = x;
 
-    $.get('/bucket_list', function(data, dataIndex) {
-      var dataIndex = eventNumber;
-      console.log(data[dataIndex].title);
+    $.get('/bucket_list', function(data) {
 
-      resultDiv.append(data[dataIndex].title + "<br>");
+
+      var divNumber = "Event" + eventNumber;
+      console.log(divNumber)
+
+      console.log(data[eventNumber].title);
+
+      // resultDiv.append(data[eventNumber].title + "<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>");
+
+      var $emptyBucket = $("<div id=" + divNumber + "></div>")
+      var $bucketButton = $("<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>")
+
+      $emptyBucket.append(data[eventNumber].title);
+      $emptyBucket.append($bucketButton);
+
+      $("#bucket-list-todo").append($emptyBucket);
+
+
+      $('#' + divNumber).click(function(){
+        // debugger
+        $('#' + eventNumber).hide();
+        $('#' + divNumber).hide();
+
+        resultDivDidit.append(data[eventNumber].title + "<br>" + "<br>");
+
+        console.log(eventNumber)
+      });
+
+
     });
-  };
+  }; // END of displayBucketEvent
+
 
   // USER EDIT
   // var editUser = function($id){
@@ -237,9 +261,11 @@ $(function(){
   //   // }).done(userUpdateForm);
   // };
   // editUser();
+
 // $("#map-canvas").on("click", ".addEvent",function() {
 //   console.log($(".addEvent"))
 // })
+
 
   console.log('User is ' + user);
   console.log('The cookie is ' + document.cookie)
