@@ -3,7 +3,7 @@ console.log('Page loaded...')
 
 var user = null;
 
-
+// TEST
 // var clicked = function() {
 //   var clickCount = getCount();
 //   console.log('party in the usa' + clickCount);
@@ -153,13 +153,22 @@ $(function(){
       // loop through our data to make markers
       for (var i = 0; i < data.length; i++) {
 
-        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info + "<a href='#' id='marker-link' class='button' onclick='clicked();'><br>Add to Bucket List</a>";
+
+
+        var eventInfo = "<strong>" + data[i].title + "</strong>" + "<br>" + data[i].info
 
         var marker = new google.maps.Marker ({
           position: data[i].location,
           map: map,
           animation: google.maps.Animation.DROP,
           title: data[i].title
+        });
+
+        $('#mylist-add').click(function(){
+    // console.log('add worked...')
+
+            var x = Math.floor(Math.random() * 35);
+
         });
 
         // // link to myBucketList
@@ -185,7 +194,7 @@ $(function(){
           // attach click event to markers
           marker.addListener('click', function() {
             infowindow.open(map, marker);
-            consoleLog
+            // consoleLog
           });
         };
 
@@ -202,20 +211,29 @@ $(function(){
   var displayBucketEvent = function(x){
 
     var resultDiv = $("#bucket-list-todo");
+    var resultDivDidit = $('#bucket-list-completed');
     // resultDiv.empty();
 
     var eventNumber = x;
 
     $.get('/bucket_list', function(data) {
 
+
+      var divNumber = "Event" + eventNumber;
+      console.log(divNumber)
+
       console.log(data[eventNumber].title);
 
-      resultDiv.append(data[eventNumber].title + "<br>"  + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>");
+      resultDiv.append(data[eventNumber].title + "<br>" + "<button id=" + eventNumber + " class='btn-btn-primary'>I f**king did it!!</button>" + "<br>" + "<br>");
 
       $('#' + eventNumber).click(function(){
         // debugger
-        // $('button', '.bucket-todo').empty().remove();
-        console.log('rangers are the best')
+        $('#' + eventNumber).hide();
+        $('#' + divNumber).hide();
+
+        resultDivDidit.append(data[eventNumber].title + "<br>" + "<br>");
+
+        console.log(eventNumber)
       });
 
 
@@ -235,9 +253,10 @@ $(function(){
   // };
   // editUser();
 
-  // $("#map-canvas").on("click", ".addEvent",function() {
-  //   console.log($(".addEvent"))
-  // })
+// $("#map-canvas").on("click", ".addEvent",function() {
+//   console.log($(".addEvent"))
+// })
+
 
   console.log('User is ' + user);
   console.log('The cookie is ' + document.cookie)
@@ -290,5 +309,3 @@ $(function(){
 //     data: instructorData
 //   }).done(getInstructors);
 // };
-
-
